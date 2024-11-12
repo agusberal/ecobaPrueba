@@ -1,6 +1,6 @@
 <?php
 $host = 'localhost';
-$db   = 'ecobaPrueba';
+$db   = 'sistema_educativo_ambiental';
 $user = 'root';
 $pass = '';
 $charset = 'utf8mb4';

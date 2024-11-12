@@ -17,6 +17,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         if (login($nombre_usuario, $contrasena)) {
             // Redirigir según el tipo de usuario
             switch ($_SESSION['tipo_usuario']) {
+                case 'administrador_superior':
+                    header('Location: superior_dashboard.php');
+                    break;
                 case 'administrador':
                     header('Location: admin_dashboard.php');
                     break;

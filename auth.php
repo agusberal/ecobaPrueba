@@ -4,6 +4,7 @@ if (session_status() == PHP_SESSION_NONE) {
 }
 require_once 'db_connection.php';
 require_once 'funcionesAdmin.php';
+
 function login($nombre_usuario, $contrasena) {
     global $conn;
     if (!$conn) {
@@ -40,6 +41,12 @@ function registrar_usuario($nombre, $apellido, $nombre_usuario, $contrasena, $ti
         'escuela_id' => $escuela_id
     ]);
 }
+
+// Función para registrar un administrador superior
+function registrar_admin_superior($nombre, $apellido, $nombre_usuario, $contrasena) {
+    return registrar_usuario($nombre, $apellido, $nombre_usuario, $contrasena, 'administrador_superior');
+}
+
 
 function cambiar_contrasena($usuario_id, $nueva_contrasena) {
     global $conn;
